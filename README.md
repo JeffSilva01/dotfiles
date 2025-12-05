@@ -46,7 +46,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)"
 
 ```bash
 # Inicializar com este repositório
-chezmoi init https://github.com/jeffsilva01/dotfiles.git
+chezmoi init git@github.com:JeffSilva01/dotfiles.git
 
 # Verificar o que será aplicado
 chezmoi diff
