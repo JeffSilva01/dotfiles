@@ -1,0 +1,11 @@
+[Unit]
+Description=Set mouse DPI on startup (user service)
+After=ratbagd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ratbagctl "Logitech MX Master 3S" dpi set 3000
+
+[Install]
+WantedBy=default.target
+
