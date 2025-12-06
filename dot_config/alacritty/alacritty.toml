@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/gruber_darker.toml"]
+import = ["./themes/catppuccin_mocha.toml"]
 
 # Window dimensions
 [window]

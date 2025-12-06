@@ -31,7 +31,7 @@ export FZF_CTRL_R_OPTS="
 
 eval "$(zoxide init fish --cmd z)"
 
-alias cat="bat"
+# alias cat="bat"
 alias zshconfig="nvim ~/.zshrc"
 alias tmuxconfig="nvim ~/.tmux.conf"
 
