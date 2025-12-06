@@ -56,3 +56,6 @@ function runctx
 end
 
 ~/.local/bin/mise activate fish | source
+
+# opencode
+fish_add_path /home/jeffsilva01/.opencode/bin
