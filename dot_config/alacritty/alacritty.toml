@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/catppuccin_mocha.toml"]
+import = ["./themes/tokyo_night.toml"]
 
 # Window dimensions
 [window]
@@ -18,11 +18,11 @@ decorations_theme_variant = "Dark"  # Adapta-se ao tema do sistema
 
 # Font configuration
 [font]
-normal.family = "JetBrainsMono Nerd Font Mono"
+normal.family = "JetBrains Mono"
 normal.style = "Regular"
-bold.family = "JetBrainsMono Nerd Font Mono"
+bold.family = "JetBrains Mono"
 bold.style = "Bold"
-italic.family = "JetBrainsMono Nerd Font Mono"
+italic.family = "JetBrains Mono"
 italic.style = "Italic"
 size = 13.0
 offset.x = 1
@@ -51,6 +51,11 @@ key = "Q"
 mods = "Control"
 action = "Quit"
 
+[[keyboard.bindings]]
+key = "T"
+mods = "Control|Shift"
+command = { program = "/usr/bin/bash", args = ["-lc", "tmux attach -t main || tmux new -s main"] }
+
 # Cursor
 [cursor]
 style = "Block"
@@ -58,9 +63,11 @@ unfocused_hollow = true
 blink_interval = 750
 
 # Shell
-[terminal.shell]
-program = "/usr/bin/tmux"
-args = ["new-session"]
+ [terminal.shell]
+# program = "/usr/bin/tmux"
+program = "/usr/bin/fish"
+# args = ["new-session"]
+args = ["--login"]
 
 # Environmen
 [env]

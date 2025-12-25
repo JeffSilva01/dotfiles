@@ -8,11 +8,6 @@ starship init fish | source
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export ANDROID_HOME="$HOME/.android"
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-
 # Set up fzf key bindings
 fzf --fish | source
 
@@ -32,10 +27,9 @@ export FZF_CTRL_R_OPTS="
 eval "$(zoxide init fish --cmd z)"
 
 # alias cat="bat"
-alias zshconfig="nvim ~/.zshrc"
 alias tmuxconfig="nvim ~/.tmux.conf"
 
-export TERMINAL=alacritty
+export TERMINAL='alacritty'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
@@ -45,15 +39,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
-
-function runctx
-    set logfile /tmp/ctx-logs.txt
-    $argv | tee $logfile
-    echo ""
-    echo "📄 Saída salva em: $logfile"
-    echo "Abrindo no LazyVim..."
-    nvim $logfile
-end
 
 ~/.local/bin/mise activate fish | source
 

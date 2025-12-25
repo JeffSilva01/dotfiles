@@ -2,18 +2,28 @@
 last-window-maximised=false
 last-window-size=(732, 528)
 
+[org/gnome/Totem]
+active-plugins=['variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'movie-properties', 'open-directory', 'mpris', 'autoload-subtitles']
+subtitle-encoding='UTF-8'
+
+[org/gnome/Weather]
+window-height=424
+window-maximized=false
+window-width=439
+
 [org/gnome/calculator]
 base=10
 button-mode='basic'
 source-currency=''
-source-units='degree'
+source-units=['degree']
 target-currency=''
-target-units='radian'
+target-units=['radian']
+unit-category='angle'
 window-maximized=false
-window-size=(360, 616)
+window-size=(375, 616)
 
 [org/gnome/control-center]
-last-panel='mouse'
+last-panel='display'
 window-state=(980, 640, false)
 
 [org/gnome/desktop/a11y]
@@ -66,14 +76,16 @@ cursor-theme='Bibata-Modern-Classic'
 enable-animations=true
 gtk-theme='Adwaita'
 icon-theme='Papirus-Maia'
-text-scaling-factor=1.05
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['firefox', 'gnome-power-panel', 'google-chrome', 'org-gnome-nautilus']
+application-children=['firefox', 'gnome-power-panel', 'google-chrome', 'org-gnome-nautilus', 'gnome-about-panel', 'org-gnome-totem']
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-about-panel]
+application-id='gnome-about-panel.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
@@ -83,6 +95,9 @@ application-id='google-chrome.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-totem]
+application-id='org.gnome.Totem.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
@@ -106,6 +121,20 @@ toggle-maximized=['<Super>Up']
 [org/gnome/desktop/wm/preferences]
 button-layout='close:appmenu'
 focus-mode='sloppy'
+
+[org/gnome/evince/default]
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=true
+sidebar-page='thumbnails'
+sidebar-size=148
+sizing-mode='automatic'
+window-ratio=(2.1502645161333671, 1.2424428945451056)
+zoom=0.48225308641975312
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -147,10 +176,16 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/portal/filechooser/com.google.Chrome]
-last-folder-path='/home/jeffsilva01/Downloads'
+last-folder-path='/home/jeffsilva01/.config/fish'
+
+[org/gnome/portal/filechooser/obsidian]
+last-folder-path='/home/jeffsilva01/Documents'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
+
+[org/gnome/settings-daemon/plugins/housekeeping]
+donation-reminder-last-shown=int64 1765989394074556
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
@@ -168,17 +203,23 @@ command='prime-run google-chrome-stable'
 name='browser prime'
 
 [org/gnome/shell]
+app-picker-layout=[{'accessories': <{'position': <0>}>, 'org.gnome.Decibels.desktop': <{'position': <1>}>, 'org.gnome.Loupe.desktop': <{'position': <2>}>, 'org.gnome.Lollypop.desktop': <{'position': <3>}>, 'office': <{'position': <4>}>, 'system-tools': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.manjaro.pamac.manager.desktop': <{'position': <7>}>, 'org.gnome.Nautilus.desktop': <{'position': <8>}>}]
 enabled-extensions=['pamac-updates@manjaro.org', 'dash-to-dock@micxgx.gmail.com', 'appindicatorsupport@rgcjonas.gmail.com', 'gnome-ui-tune@itstime.tech', 'legacyschemeautoswitcher@joshimukul29.gmail.com', 'x11gestures@joseexposito.github.io', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'caffeine@patapon.info', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox.desktop', 'google-chrome.desktop', 'Alacritty.desktop']
+last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='48.5'
 
 [org/gnome/shell/extensions/caffeine]
-cli-toggle=true
-indicator-position-max=4
+cli-toggle=false
+indicator-position-max=1
 user-enabled=true
 
 [org/gnome/shell/extensions/user-theme]
 name=''
+
+[org/gnome/shell/weather]
+automatic-location=true
+locations=@av []
 
 [org/gnome/shell/world-clocks]
 locations=@av []
