@@ -3,7 +3,7 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     opts = {
-      transparent_mode = true,
+      -- transparent_mode = true,
     },
   },
 
@@ -36,7 +36,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      colorscheme = "gruvbox",
     },
   },
 }

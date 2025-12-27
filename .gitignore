@@ -1,0 +1,5 @@
+.config/chezmoi/key.txt
+*.key
+*.pem
+*.env
+

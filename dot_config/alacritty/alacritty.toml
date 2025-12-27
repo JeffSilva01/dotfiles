@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/tokyo_night.toml"]
+import = ["./themes/gruvbox_material_hard_dark.toml"]
 
 # Window dimensions
 [window]
@@ -11,7 +11,7 @@ padding.x = 5
 padding.y = 5
 dynamic_padding = false
 decorations = "none"
-opacity = 0.95
+# opacity = 0.95
 startup_mode = "Windowed"
 dynamic_title = true  # Títulos dinâmicos baseados no conteúdo
 decorations_theme_variant = "Dark"  # Adapta-se ao tema do sistema
@@ -51,11 +51,6 @@ key = "Q"
 mods = "Control"
 action = "Quit"
 
-[[keyboard.bindings]]
-key = "T"
-mods = "Control|Shift"
-command = { program = "/usr/bin/bash", args = ["-lc", "tmux attach -t main || tmux new -s main"] }
-
 # Cursor
 [cursor]
 style = "Block"
@@ -64,10 +59,10 @@ blink_interval = 750
 
 # Shell
  [terminal.shell]
-# program = "/usr/bin/tmux"
-program = "/usr/bin/fish"
-# args = ["new-session"]
-args = ["--login"]
+program = "/usr/bin/tmux"
+# program = "/usr/bin/fish"
+args = ["new-session"]
+# args = ["--login"]
 
 # Environmen
 [env]

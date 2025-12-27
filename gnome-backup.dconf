@@ -176,7 +176,7 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/portal/filechooser/com.google.Chrome]
-last-folder-path='/home/jeffsilva01/.config/fish'
+last-folder-path='/home/jeffsilva01/.config/opencode'
 
 [org/gnome/portal/filechooser/obsidian]
 last-folder-path='/home/jeffsilva01/Documents'
@@ -210,8 +210,8 @@ last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='48.5'
 
 [org/gnome/shell/extensions/caffeine]
-cli-toggle=false
-indicator-position-max=1
+cli-toggle=true
+indicator-position-max=4
 user-enabled=true
 
 [org/gnome/shell/extensions/user-theme]
