@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/gruvbox_material_hard_dark.toml"]
+import = ["./themes/gruvbox_material_medium_dark.toml"]
 
 # Window dimensions
 [window]
@@ -11,7 +11,7 @@ padding.x = 5
 padding.y = 5
 dynamic_padding = false
 decorations = "none"
-# opacity = 0.95
+blur = true
 startup_mode = "Windowed"
 dynamic_title = true  # Títulos dinâmicos baseados no conteúdo
 decorations_theme_variant = "Dark"  # Adapta-se ao tema do sistema

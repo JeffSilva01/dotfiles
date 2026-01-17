@@ -27,6 +27,7 @@ export FZF_CTRL_R_OPTS="
 eval "$(zoxide init fish --cmd z)"
 
 alias tmuxconfig="nvim ~/.tmux.conf"
+alias fishconfig="nvim ~/.config/fish/config.fish"
 
 export TERMINAL='alacritty'
 export EDITOR='nvim'
