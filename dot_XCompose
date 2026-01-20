@@ -12,5 +12,5 @@ include "%L"
 # UTF-8 (Unicode) compose sequences
 
  # Overrides C acute with Ccedilla:
- <dead_acute> <C> : "Ç" "Ccedilla"
- <dead_acute> <c> : "ç" "ccedilla"
+ <dead_acute> <C> : "Ç" Ccedilla
+ <dead_acute> <c> : "ç" ccedilla
