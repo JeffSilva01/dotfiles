@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/gruvbox_material_hard_dark.toml"]
+import = ["./themes/catppuccin_macchiato.toml"]
 
 # Window dimensions
 [window]
