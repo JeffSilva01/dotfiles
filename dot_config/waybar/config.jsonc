@@ -1,238 +1,200 @@
-// -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 30, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  "spacing": 4, // Gaps between modules (4px)
-  // Choose the order of the modules
+  "layer": "top",
+  "output": [
+    "HDMI-A-1",
+    "eDP-1"
+  ],
   "modules-left": [
-    "hyprland/workspaces",
-    "custom/media"
+    "backlight",
+    "wireplumber",
+    "cpu",
+    "mpris"
   ],
   "modules-center": [
-    "sway/window"
+    "hyprland/workspaces",
+    "clock"
   ],
   "modules-right": [
-    "mpd",
-    "idle_inhibitor",
-    "pulseaudio",
-    "network",
     "power-profiles-daemon",
-    "cpu",
+    "custom/bluetooth",
+    "network",
     "memory",
-    "temperature",
-    "backlight",
-    "keyboard-state",
-    "sway/language",
-    "battery",
-    "battery#bat2",
-    "clock",
     "tray",
-    "custom/power"
+    "battery",
+    "custom/updates"
   ],
-  // Modules configuration
-  // "sway/workspaces": {
-  //     "disable-scroll": true,
-  //     "all-outputs": true,
-  //     "warp-on-scroll": false,
-  //     "format": "{name}: {icon}",
-  //     "format-icons": {
-  //         "1": "",
-  //         "2": "",
-  //         "3": "",
-  //         "4": "",
-  //         "5": "",
-  //         "urgent": "",
-  //         "focused": "",
-  //         "default": ""
-  //     }
-  // },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 10,
-    // "icons": {
-    //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    // }
-  },
-  "clock": {
-    // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "{}% "
-  },
-  "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
+  "wireplumber": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "on-click": "pavucontrol",
     "format-icons": [
-      "",
-      "",
-      ""
+      "",
+      "",
+      ""
     ]
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": " ",
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
+    "on-click": "~/.config/rofi/iwmenu/iwmenu-waybar.sh"
   },
   "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
+    "device": "intel_backlight",
+    "rotate": 0,
+    "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+      ""
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 20
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format": "{icon} {capacity}%",
+    "rotate": 0,
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ]
   },
-  "battery#bat2": {
-    "bat": "BAT2"
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%m-%d-%Y}",
+    "tooltip": false
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty -- btop",
+    "tooltip": true
   },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  "tray": {
+    "icon-size": 16,
+    "rotate": 0,
+    "spacing": 5
   },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "max-length": 20
   },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
-  "custom/power": {
-    "format": "⏻ ",
+  "custom/bluetooth": {
+    "format": " {}",
+    "exec": "~/.config/waybar/bluetooth-display.sh",
+    "interval": 10,
+    "on-click": "blueman-manager",
+    "return-type": "plain",
     "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
+    "max-length": 25
+  },
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "format-stopped": "",
+    "ignore-list": [
+      "vesktop"
+    ],
+    "player-icons": {
+      "brave": "",
+      "default": "",
+      "spotify": "",
+      "vlc": "",
+      "mpv": ""
+    },
+    "status-icons": {
+      "paused": "▶",
+      "playing": "⏸"
+    },
+    "max-length": 40,
+    "tooltip": true
   },
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon} {windows} ",
     "on-click": "activate",
-    "active-only": false,
-    "all-outputs": true,
-    "disable-scroll": true
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "title<.*nvim*>": "",
+      "title<.*WhatsApp.*>": "",
+      "title<.*github.*>": "",
+      "title<.*gitlab.*>": "",
+      "title<.*bitbucket.*>": "",
+      "title<.*stackoverflow.*>": "",
+      "title<.*stack overflow.*>": "",
+      "title<.*vercel.*>": "▲",
+      "title<.*netlify.*>": "",
+      "title<.*figma.*>": "",
+      "title<.*canva.*>": "",
+      "title<.*google docs.*>": "",
+      "title<.*google sheets.*>": "",
+      "title<.*google drive.*>": "",
+      "title<.*youtube music.*>": "",
+      "title<.*twitch.*>": "",
+      "title<.*chatgpt.*>": "",
+      "title<.*openai.*>": "",
+      "title<.*gmail.*>": "",
+      "title<.*outlook.*>": "",
+      "title<.*prisma.*>": "",
+      "title<.*docker.*>": "",
+      "title<.*kubernetes.*>": "󱃾",
+      "title<.*aws.*>": "",
+      "title<.*vercel dashboard.*>": "▲",
+      "title<Volume Control>": "󰕾",
+      "class<thunar>": "󰉋",
+      "class<nautilus>": "󰉋",
+      "class<pcmanfm>": "󰉋",
+      "class<nm-connection-editor>": "󰤨",
+      "class<obs>": "",
+      "class<gimp>": "",
+      "class<firefox>": "",
+      "class<alacritty>": "",
+      "class<discord>": "",
+      "class<spotify>": "",
+      "class<code>": "󰨞",
+      "class<code-oss>": "󰨞",
+      "class<jetbrains-idea>": "",
+      "class<postman>": "󰛮",
+      "class<slack>": "",
+      "class<teams>": "󰊻",
+      "class<signal>": "󰍦",
+      "class<telegram>": ""
+    },
+    "active": "",
+    "sort-by-number": true
+  },
+  "custom/updates": {
+    "exec": "systemupdate.sh",
+    "return-type": "json",
+    "format": "{}",
+    "rotate": 0,
+    "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
+    "interval": 43200,
+    "tooltip": true,
+    "signal": 20
   }
 }
