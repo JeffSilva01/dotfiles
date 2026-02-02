@@ -20,8 +20,7 @@
     "network",
     "memory",
     "tray",
-    "battery",
-    "custom/updates"
+    "battery"
   ],
   "wireplumber": {
     "tooltip": false,
@@ -187,14 +186,15 @@
     "active": "",
     "sort-by-number": true
   },
-  "custom/updates": {
-    "exec": "systemupdate.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
-    "interval": 43200,
+  "power-profiles-daemon": {
+    "format": "{icon} ",
+    "tooltip-format": "Perfil de Energia: {profile}\nDriver: {driver}",
     "tooltip": true,
-    "signal": 20
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   }
 }

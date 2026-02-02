@@ -19,13 +19,5 @@ return {
     vim.keymap.set("n", "<C-e>", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = "Harpoon: Menu" })
-
-    -- Navegação rápida entre arquivos da lista (anterior e próximo)
-    vim.keymap.set("n", "<C-S-P>", function()
-      harpoon:list():prev()
-    end)
-    vim.keymap.set("n", "<C-S-N>", function()
-      harpoon:list():next()
-    end)
   end,
 }
