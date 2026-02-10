@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+# hash: {{ include "udev-rules/99-mx-master-dpi.rules" | sha256sum }}
+
+# Garante que o diretório existe
+sudo mkdir -p /etc/udev/rules.d
+
+# Cria ou sobrescreve o arquivo com o conteúdo do source
+sudo tee /etc/udev/rules.d/99-mx-master-dpi.rules > /dev/null <<EOF
+{{ include "udev-rules/99-mx-master-dpi.rules" }}
+EOF
+
+# Recarrega as regras
+sudo udevadm control --reload-rules && sudo udevadm trigger
+{{ end -}}
+

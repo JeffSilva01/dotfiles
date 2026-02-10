@@ -1,0 +1,179 @@
+* {
+  border: none;
+  /* border-radius: 10px; */
+  font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", sans-serif;
+  font-size: 15px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #1e2030;
+  /* background: transparent; */
+  color: #cad3f5;
+  padding: 2px 6px;
+}
+
+/* =====================
+   GRUPOS
+   ===================== */
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: #24273a; /* base */
+  margin: 4px;
+  padding: 0px;
+  border-radius: 8px;
+}
+
+/* =====================
+   WORKSPACES
+   ===================== */
+
+#workspaces button {
+  padding: 4px 8px;
+  margin: 0;
+  background: transparent;
+  color: #b8c0e0;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  background: #8aadf4;
+  color: #181926;
+}
+
+#workspaces button:hover {
+  background: #c6a0f6;
+}
+
+/* =====================
+   CLOCK
+   ===================== */
+
+#clock {
+  color: #b7bdf8;
+  font-weight: bold;
+}
+
+/* =====================
+   ÁUDIO
+   ===================== */
+
+#wireplumber {
+  color: #8bd5ca;
+}
+
+#wireplumber.muted {
+  color: #ed8796;
+}
+
+/* =====================
+   BACKLIGHT
+   ===================== */
+
+#backlight {
+  color: #eed49f;
+}
+
+/* =====================
+   CPU / MEM
+   ===================== */
+
+#cpu {
+  color: #f5a97f;
+}
+
+#memory {
+  color: #a6da95;
+}
+
+/* =====================
+   NETWORK
+   ===================== */
+
+#network {
+  color: #8aadf4;
+}
+
+#network.disconnected {
+  color: #ed8796;
+}
+
+/* =====================
+   BLUETOOTH (custom)
+   ===================== */
+
+#custom-bluetooth {
+  color: #c6a0f6;
+}
+
+/* =====================
+   BATTERY
+   ===================== */
+
+#battery {
+  color: #a6da95;
+}
+
+#battery.warning {
+  color: #eed49f;
+}
+
+#battery.critical {
+  color: #ed8796;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #8bd5ca;
+}
+
+/* =====================
+   POWER PROFILES
+   ===================== */
+
+#power-profiles-daemon {
+  color: #f5a97f;
+}
+
+/* =====================
+   MPRIS
+   ===================== */
+
+#mpris {
+  color: #b7bdf8;
+}
+
+#mpris.paused {
+  color: #eed49f;
+}
+
+/* =====================
+   TOOLTIP
+   ===================== */
+
+tooltip {
+  background: #181926;
+  border-radius: 10px;
+  border: 1px solid #363a4f;
+}
+
+tooltip label {
+  color: #cad3f5;
+  padding: 6px;
+}
+
+#cpu,
+#memory,
+#network,
+#battery,
+#wireplumber,
+#backlight,
+#clock,
+#mpris,
+#custom-bluetooth,
+#power-profiles-daemon {
+  padding: 0 8px;
+}
+

@@ -1,0 +1,152 @@
+{
+  "layer": "top",
+  "output": [
+    "HDMI-A-1",
+    "eDP-1"
+  ],
+  "modules-left": [
+    "backlight",
+    "wireplumber",
+    "cpu",
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+    "clock"
+  ],
+  "modules-right": [
+    "custom/bluetooth",
+    "network",
+    "memory",
+    "battery"
+  ],
+  "wireplumber": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] kitty -e wiremix\"",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": " ",
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] alacritty -e nmtui\"",
+    "interval": 2
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "rotate": 0,
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      ""
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "rotate": 0,
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%m-%d-%Y}",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "hyprctl dispatch exec \"[float;size 950 600;center] alacritty -e btop\"",
+    "tooltip": true
+  },
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "max-length": 20
+  },
+  "custom/bluetooth": {
+    "format": " {}",
+    "interval": 10,
+    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] alacirtty -e bluetui\"",
+    "return-type": "plain",
+    "tooltip": false,
+    "max-length": 25
+  },
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "format-stopped": "",
+    "ignore-list": [
+      "vesktop"
+    ],
+    "player-icons": {
+      "brave": "",
+      "default": "",
+      "spotify": "",
+      "vlc": "",
+      "mpv": ""
+    },
+    "status-icons": {
+      "paused": "▶",
+      "playing": "⏸"
+    },
+    "max-length": 40,
+    "tooltip": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon} {windows} ",
+    "on-click": "activate",
+    "window-rewrite-default": "",
+    "active": "",
+    "sort-by-number": true,
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "title<.*nvim*>": "",
+      "title<.*WhatsApp.*>": "",
+      "title<.*github.*>": "",
+      "title<.*vercel.*>": "▲",
+      "title<.*google docs.*>": "",
+      "title<.*google sheets.*>": "",
+      "title<.*google drive.*>": "",
+      "title<.*gmail.*>": "",
+      "title<.*docker.*>": "",
+      "class<org.kde.dolphin>": "󰉋",
+      "class<firefox>": "",
+      "class<alacritty>": "",
+      "class<kitty>": "",
+      "class<discord>": "",
+      "class<telegram>": ""
+    }
+  }
+}

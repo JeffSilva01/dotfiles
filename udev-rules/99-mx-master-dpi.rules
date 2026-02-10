@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="Logitech MX Master 3S", RUN+="/home/jeffsilva01/.local/bin/set_mx_dpi.sh"
+
