@@ -1,6 +1,6 @@
 [general]
 import = [ 
-  "./themes/catppuccin_macchiato.toml"
+  "./themes/tokyo_night_storm.toml"
 ]
 
 # Window dimensions
@@ -12,6 +12,8 @@ position.y = 0
 padding.x = 5
 padding.y = 5
 dynamic_padding = false
+# opacity = 0.85
+blur = true
 decorations = "none"
 startup_mode = "Windowed"
 dynamic_title = true  # Títulos dinâmicos baseados no conteúdo

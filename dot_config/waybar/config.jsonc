@@ -25,7 +25,7 @@
     "scroll-step": 5,
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 {volume}%",
-    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] kitty -e wiremix\"",
+    "on-click": "alacritty --class floatterm -e wiremix",
     "format-icons": [
       "",
       "",
@@ -41,7 +41,7 @@
     "format-linked": "󰈀 {ifname} (No IP)",
     "format-disconnected": "󰖪 ",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] alacritty -e nmtui\"",
+    "on-click": "alacritty --class floatterm -e nmtui",
     "interval": 2
   },
   "backlight": {
@@ -82,12 +82,12 @@
   },
   "clock": {
     "format": "{:%H:%M}",
-    "format-alt": "{:%m-%d-%Y}",
+    "format-alt": "{:%d-%m-%Y}",
     "tooltip": false
   },
   "cpu": {
     "format": " {usage}%",
-    "on-click": "hyprctl dispatch exec \"[float;size 950 600;center] alacritty -e btop\"",
+    "on-click": "alacritty --class floatterm -e btop",
     "tooltip": true
   },
   "memory": {
@@ -98,7 +98,7 @@
   "custom/bluetooth": {
     "format": " {}",
     "interval": 10,
-    "on-click": "hyprctl dispatch exec \"[float;size 750 500;center] alacirtty -e bluetui\"",
+    "on-click": "alacritty --class floatterm -e bluetui",
     "return-type": "plain",
     "tooltip": false,
     "max-length": 25
