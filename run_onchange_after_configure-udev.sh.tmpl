@@ -1,0 +1,5 @@
+#!/bin/bash
+# hash: {{ include "udev-rules/99-mx-master-dpi.rules" | sha256sum }}
+sudo cp {{ joinPath .chezmoi.sourceDir "udev-rules/99-mx-master-dpi.rules" | quote }} /etc/udev/rules.d/99-mx-master-dpi.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+

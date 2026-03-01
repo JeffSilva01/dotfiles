@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ChatGPT
+Exec=brave --profile-directory="Profile 2" https://chat.openai.com
+Type=Application
+Icon=brave
+Categories=Network;

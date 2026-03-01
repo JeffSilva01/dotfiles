@@ -1,2 +1,1 @@
-ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="Logitech MX Master 3S", RUN+="/home/jeffsilva01/.local/bin/set_mx_dpi.sh"
-
+ACTION=="add", SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_BUS}=="bluetooth", ENV{ID_INPUT_MOUSE}=="1", ATTRS{name}=="Logitech MX Master 3S", RUN+="/usr/local/bin/set_mx_dpi.sh"

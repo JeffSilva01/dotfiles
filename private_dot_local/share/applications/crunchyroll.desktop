@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Crunchyroll
+Exec=brave --profile-directory="Profile 4" https://www.crunchyroll.com
+Type=Application
+Icon=brave
+Categories=Network;
+

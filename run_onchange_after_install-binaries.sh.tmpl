@@ -1,0 +1,5 @@
+#!/bin/bash
+# hash: {{ include "scripts/set_mx_dpi.sh" | sha256sum }}
+sudo cp {{ joinPath .chezmoi.sourceDir "scripts/set_mx_dpi.sh" | quote }} /usr/local/bin/set_mx_dpi.sh
+sudo chmod +x /usr/local/bin/set_mx_dpi.sh
+
