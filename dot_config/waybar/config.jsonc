@@ -66,6 +66,10 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Bateria Fraca' 'Nível: {capacity}%'",
+      "on-discharging-critical": "notify-send -u critical 'BATERIA CRÍTICA' 'Conecte o carregador imediatamente!'"
+    },
     "format-icons": [
       "󰂎",
       "󰁺",
