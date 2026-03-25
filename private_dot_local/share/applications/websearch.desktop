@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Web Search
-Exec=/home/jeffsilva01/.local/bin/websearch
-Type=Application
-Icon=brave
-Terminal=false
-Categories=Network;

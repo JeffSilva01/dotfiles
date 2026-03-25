@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Lumo by Proton
+Exec=brave --profile-directory="Profile 2" https://lumo.proton.me/guest
+Type=Application
+Icon=brave
+Categories=Network;
+

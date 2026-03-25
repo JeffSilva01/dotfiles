@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Duck.ai
+Exec=brave --profile-directory="Profile 2" https://duck.ai/
+Type=Application
+Icon=brave
+Categories=Network;
+
