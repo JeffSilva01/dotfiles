@@ -41,7 +41,7 @@
     "format-linked": "󰈀 {ifname} (No IP)",
     "format-disconnected": "󰖪 ",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "alacritty --class floatterm -e nmtui",
+    "on-click": "kitty --class floatterm -- nmtui",
     "interval": 2
   },
   "backlight": {
@@ -127,30 +127,5 @@
     },
     "max-length": 40,
     "tooltip": true
-  },
-  "hyprland/workspaces": {
-    "format": "{icon} {windows} ",
-    "on-click": "activate",
-    "window-rewrite-default": "",
-    "active": "",
-    "sort-by-number": true,
-    "window-rewrite": {
-      "title<.*youtube.*>": "",
-      "title<.*nvim*>": "",
-      "title<.*WhatsApp.*>": "",
-      "title<.*github.*>": "",
-      "title<.*vercel.*>": "▲",
-      "title<.*google docs.*>": "",
-      "title<.*google sheets.*>": "",
-      "title<.*google drive.*>": "",
-      "title<.*gmail.*>": "",
-      "title<.*docker.*>": "",
-      "class<org.kde.dolphin>": "󰉋",
-      "class<firefox>": "",
-      "class<alacritty>": "",
-      "class<kitty>": "",
-      "class<discord>": "",
-      "class<telegram>": ""
-    }
   }
 }
