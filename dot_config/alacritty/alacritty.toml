@@ -1,6 +1,6 @@
 [general]
 import = [ 
-  "./themes/tokyo_night_storm.toml"
+  "./themes/gruvbox_material_hard_dark.toml"
 ]
 
 # Window dimensions
