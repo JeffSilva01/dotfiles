@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Work
-Exec=brave --profile-directory="Profile 3"
-Type=Application
-Icon=brave
-Categories=Network;
-

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Google Ai Mode
-# Exec=firefox -P "Ai Mode" https://www.google.com/search?udm=50&aep=11
-Exec=brave --profile-directory="Profile 2" https://www.google.com/search?udm=50&aep=11
-Type=Application
-Icon=brave
-Categories=Network;

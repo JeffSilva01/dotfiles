@@ -1,89 +1,59 @@
-/* Gruvbox Dark Palette */
-@define-color bg0   #282828;
-@define-color bg1   #3c3836;
-@define-color bg2   #504945;
-
-@define-color fg0   #ebdbb2;
-@define-color fg1   #d5c4a1;
-@define-color fg2   #bdae93;
-
-@define-color surface0 #504945;
-@define-color surface1 #665c54;
-@define-color surface2 #7c6f64;
-
-@define-color overlay0 #928374;
-@define-color overlay1 #a89984;
-@define-color overlay2 #bdae93;
-
-@define-color blue   #83a598;
-@define-color purple #d3869b;
-@define-color red    #cc241d;
-@define-color green  #98971a;
-@define-color yellow #fabd2f;
-
-/* Window */
 window {
     margin: 0px;
-    border: 2px solid @yellow;
-    box-shadow: 0px 0px 10px rgba(250, 189, 47, 0.5);
-    border-radius: 10px;
-    background-color: @bg0;
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
+    background-color: #232136;
+    border-radius: 0px;
+    border: 2px solid #eb6f92;
+    color: #e0def4;
+    font-family: 'Monofur Nerd Font';
+    font-size: 20px;
 }
 
-/* Input box */
 #input {
-    margin: 10px;
-    padding: 8px;
-    border-radius: 8px;
+    margin: 5px;
+    border-radius: 0px;
     border: none;
-    background-color: @surface0;
-    color: @fg0;
+    border-radius: 0px;;
+    color: #eb6f92;
+    background-color: #393552;
+    
 }
 
-/* Inner box */
 #inner-box {
     margin: 5px;
     border: none;
-    background-color: transparent;
+    background-color: #232136;
+    color: #232136;
+    border-radius: 0px;
 }
 
-/* Outer box */
 #outer-box {
-    margin: 10px;
+    margin: 15px;
     border: none;
-    background-color: transparent;
+    background-color: #232136;
 }
 
-/* Scroll */
 #scroll {
     margin: 0px;
     border: none;
 }
 
-/* Entries */
-#entry {
-    padding: 8px;
-    margin: 4px;
-    border-radius: 6px;
-    background-color: transparent;
-    color: @fg0;
-}
-
-/* Selected entry */
-#entry:selected {
-    background-color: @surface1;
-    color: @yellow;
-}
-
-/* Text */
 #text {
-    margin: 2px;
-    color: inherit;
+    margin: 5px;
+    border: none;
+    color: #e0def4;
+} 
+
+#entry:selected {
+    background-color: #eb6f92;
+    color: #232136;
+    border-radius: 0px;;
+    outline: none;
 }
 
-/* Image */
-#img {
-    margin-right: 8px;
+#entry:selected * {
+    background-color: #eb6f92;
+    color: #232136;
+    border-radius: 0px;;
+    outline: none;
 }
+

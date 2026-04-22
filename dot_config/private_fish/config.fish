@@ -28,14 +28,11 @@ alias tmuxconfig="nvim ~/.tmux.conf"
 alias fishconfig="nvim ~/.config/fish/config.fish"
 
 alias ls='eza --icons --color=auto --group-directories-first'
-alias ll='eza -l --icons --color=auto --group-directories-first'
-alias la='eza -la --icons --color=auto --group-directories-first'
-
-export TERMINAL='alacritty'
-export EDITOR='nvim'
-export VISUAL='nvim'
 
 /usr/bin/mise activate fish | source
 
 # opencode
-fish_add_path /home/maracujavibes/.opencode/bin
+fish_add_path $HOME/.opencode/bin
+
+set -gx PNPM_HOME $HOME/.local/share/pnpm
+fish_add_path $PNPM_HOME

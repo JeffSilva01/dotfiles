@@ -1,7 +1,5 @@
 [general]
-import = [ 
-  "./themes/gruvbox_material_hard_dark.toml"
-]
+import = ["rose-pine-moon.toml"]
 
 # Window dimensions
 [window]
@@ -12,7 +10,7 @@ position.y = 0
 padding.x = 5
 padding.y = 5
 dynamic_padding = false
-opacity = 0.85
+# opacity = 0.9
 blur = true
 decorations = "none"
 startup_mode = "Windowed"
@@ -61,11 +59,11 @@ unfocused_hollow = true
 blink_interval = 750
 
 # Shell
- [terminal.shell]
-# program = "/usr/bin/tmux"
-program = "/usr/bin/fish"
-# args = ["new-session"]
-args = ["--login"]
+[terminal.shell]
+program = "/usr/bin/tmux"
+args = ["new-session"]
+# program = "/usr/bin/fish"
+# args = ["--login"]
 
 # Environmen
 [env]

@@ -1,7 +1,3 @@
-/* =====================
-   BASE
-   ===================== */
-
 * {
   border: none;
   font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", sans-serif;
@@ -10,8 +6,8 @@
 }
 
 window#waybar {
-  background: #282828; /* bg0 */
-  color: #ebdbb2;      /* fg */
+  background: #232136; /* base */
+  color: #e0def4; /* text */
   padding: 2px 6px;
 }
 
@@ -22,7 +18,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: #3c3836; /* bg1 */
+  background: #2a273f; /* surface */
   margin: 4px;
   padding: 0px;
   border-radius: 8px;
@@ -33,17 +29,21 @@ window#waybar {
    ===================== */
 
 #workspaces button {
+  padding: 4px 8px;
+  margin: 0;
   background: transparent;
-  color: #a89984; /* gray */
+  color: #908caa; /* subtle */
+  border-radius: 8px;
 }
 
 #workspaces button.active {
-  background: #fabd2f; /* yellow */
-  color: #282828;
+  background: #c4a7e7; /* iris */
+  color: #232136; /* base */
 }
 
 #workspaces button:hover {
-  background: #d3869b; /* purple */
+  background: #ea9a97; /* rose */
+  color: #232136;
 }
 
 /* =====================
@@ -51,7 +51,7 @@ window#waybar {
    ===================== */
 
 #clock {
-  color: #ebdbb2;
+  color: #c4a7e7; /* iris */
   font-weight: bold;
 }
 
@@ -60,11 +60,11 @@ window#waybar {
    ===================== */
 
 #wireplumber {
-  color: #8ec07c; /* green */
+  color: #9ccfd8; /* foam */
 }
 
 #wireplumber.muted {
-  color: #fb4934; /* red */
+  color: #eb6f92; /* love */
 }
 
 /* =====================
@@ -72,7 +72,7 @@ window#waybar {
    ===================== */
 
 #backlight {
-  color: #fabd2f; /* yellow */
+  color: #f6c177; /* gold */
 }
 
 /* =====================
@@ -80,11 +80,11 @@ window#waybar {
    ===================== */
 
 #cpu {
-  color: #fe8019; /* orange */
+  color: #ea9a97; /* rose */
 }
 
 #memory {
-  color: #b8bb26; /* bright green */
+  color: #9ccfd8; /* foam */
 }
 
 /* =====================
@@ -92,19 +92,19 @@ window#waybar {
    ===================== */
 
 #network {
-  color: #83a598; /* aqua */
+  color: #3e8fb0; /* pine */
 }
 
 #network.disconnected {
-  color: #fb4934; /* red */
+  color: #eb6f92; /* love */
 }
 
 /* =====================
-   BLUETOOTH
+   BLUETOOTH (custom)
    ===================== */
 
 #custom-bluetooth {
-  color: #d3869b; /* purple */
+  color: #c4a7e7; /* iris */
 }
 
 /* =====================
@@ -112,20 +112,20 @@ window#waybar {
    ===================== */
 
 #battery {
-  color: #b8bb26;
+  color: #9ccfd8; /* foam */
 }
 
 #battery.warning {
-  color: #fabd2f;
+  color: #f6c177; /* gold */
 }
 
 #battery.critical {
-  color: #fb4934;
+  color: #eb6f92; /* love */
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #8ec07c;
+  color: #3e8fb0; /* pine */
 }
 
 /* =====================
@@ -133,7 +133,7 @@ window#waybar {
    ===================== */
 
 #power-profiles-daemon {
-  color: #fe8019;
+  color: #ea9a97; /* rose */
 }
 
 /* =====================
@@ -141,11 +141,11 @@ window#waybar {
    ===================== */
 
 #mpris {
-  color: #ebdbb2;
+  color: #c4a7e7; /* iris */
 }
 
 #mpris.paused {
-  color: #fabd2f;
+  color: #f6c177; /* gold */
 }
 
 /* =====================
@@ -153,19 +153,15 @@ window#waybar {
    ===================== */
 
 tooltip {
-  background: #1d2021; /* bg0_hard */
+  background: #232136; /* base */
   border-radius: 10px;
-  border: 1px solid #504945;
+  border: 1px solid #44415a; /* highlightMed */
 }
 
 tooltip label {
-  color: #ebdbb2;
+  color: #e0def4; /* text */
   padding: 6px;
 }
-
-/* =====================
-   PADDING GLOBAL
-   ===================== */
 
 #cpu,
 #memory,
@@ -185,11 +181,11 @@ tooltip label {
    ===================== */
 
 #battery.critical:not(.charging) {
-  background-color: #cc241d;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    background-color: #eb6f92; /* love */
+    color: #232136; /* base */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
